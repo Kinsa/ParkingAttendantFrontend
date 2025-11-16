@@ -1,6 +1,6 @@
 # Parking Attendant Frontend
 
-This project demonstrates an end-user interface for the [Parking Attendant Backend project](https://github.com/Kinsa/ParkingAttendantBackend) where a parking attendant would query Vehicle Registration Marks of vehicles parked in a parking lot to assess whether they paid when entering and if they have overstayed their session.
+This project demonstrates a GUI interface for querying vehicle entries into a parking lot and assessing whether they have overstayed their session.
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
