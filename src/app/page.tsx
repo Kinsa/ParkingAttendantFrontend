@@ -16,8 +16,9 @@ interface ApiResponse {
 }
 
 export default function Home() {
-  const queryTo = '2025-11-11 23:00:00';
-  const queryFrom = '2025-11-11 18:00:00';
+  const queryTo = '2025-11-11 23:59:00';
+  const queryFrom = '2025-11-11 00:00:00';
+  const window = 24 * 60 * 60;
 
   const [vrm, setVrm] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
@@ -25,8 +26,8 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  // const apiUrl = `http://localhost:8000/api/v1/vehicle?vrm=${encodeURIComponent(vrm)}&query_to=${encodeURIComponent(queryTo)}&query_from=${encodeURIComponent(queryFrom)}`;
-  const apiUrl = `https://parking.kinsacreative.com/api/v1/vehicle?vrm=${encodeURIComponent(vrm)}`;
+  const apiUrl = `http://localhost:8001/api/v1/vehicle?vrm=${encodeURIComponent(vrm)}&query_to=${encodeURIComponent(queryTo)}&query_from=${encodeURIComponent(queryFrom)}&window=${window}`;
+  // const apiUrl = `https://parking.kinsacreative.com/api/v1/vehicle?vrm=${encodeURIComponent(vrm)}`;
 
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -84,7 +85,7 @@ export default function Home() {
   }
 
   const formatDateTime = (dateString: string | null) => {
-    if (!dateString) return null;
+    if (!dateString) return undefined;
     // Convert "yyyy-mm-dd hh:mm:ss" to ISO 8601 "yyyy-mm-ddThh:mm:ss"
     return dateString.replace(' ', 'T');
   };
