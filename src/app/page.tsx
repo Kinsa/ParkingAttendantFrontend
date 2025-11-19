@@ -26,8 +26,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  // const apiUrl = `http://localhost:8001/api/v1/vehicle?vrm=${encodeURIComponent(vrm)}&query_to=${encodeURIComponent(queryTo)}&query_from=${encodeURIComponent(queryFrom)}&window=${window}`;
-  const apiUrl = `https://parking.kinsacreative.com/api/v1/vehicle?vrm=${encodeURIComponent(vrm)}`;
+  const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/v1/vehicle?vrm=${encodeURIComponent(vrm)}`;
 
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
