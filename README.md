@@ -16,9 +16,6 @@ While any of [the plates from the fixture](https://github.com/Kinsa/ParkingAtten
 > The response shows a match for: '16 GX' at 20:41:00. I can see the exact vehicle entered the lot at 15:49. Since the next most likely match also has a '6 G' but the numbers and letters immediately before and after aren't anywhere close to '1' or 'X' I can be reasonably sure this is my car and ticket it.
 > The API's response ordering is a bit confusing. The older exact match is returned above the newer partial. The UI resolves this by noticing that it has been at least 5 hours since the exact match and deprecates it visually while looping through the output.
 
-
-
-
 ## Getting Started
 
 First, install:
